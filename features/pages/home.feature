@@ -16,4 +16,3 @@ Feature: Home page
     Then I should see a "email" field
     And I should see a "password" field
 
-  
