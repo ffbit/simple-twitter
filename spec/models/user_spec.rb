@@ -30,6 +30,10 @@ describe User do
     it "should have a password confirmation attribute" do
       @user.should respond_to(:password_confirmation)
     end
+    
+    it "should have an encrypted password attribute" do
+      @user.should respond_to(:encrypted_password)
+    end
   end
   
   describe "email attribute and it's validation" do
@@ -81,6 +85,11 @@ describe User do
       user = User.new(@attr.merge(:password => short_password, 
                                   :password_confirmation => short_password))
       user.should_not be_valid
+    end
+    
+    it "should set the encrypted password attribute" do
+      user = User.create!(@attr)
+      user.encrypted_password.should_not be_blank
     end
   end
   
