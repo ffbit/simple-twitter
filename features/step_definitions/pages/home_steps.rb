@@ -3,6 +3,7 @@ Given /^I'm at the home page$/ do
 end
 
 Then /^I shoud see "([^"]*)"$/ do |text|
-  find('body', :text => text)
+  element = find('body', :text => text)
+  element.should be_visible
 end
 
