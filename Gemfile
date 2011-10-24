@@ -6,7 +6,7 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem "devise", "~> 1.4.9"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,4 +38,7 @@ group :test, :development do
   gem "capybara", "~> 1.1.1"
   gem "minitest", "~> 2.6.2"
   gem "database_cleaner", "~> 0.6.7"
+  
+  gem "autotest-notification", "~> 2.3.3"
+  gem "spork", "0.9.0.rc8"
 end
