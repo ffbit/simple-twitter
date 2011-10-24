@@ -5,5 +5,9 @@ Feature: Home page
   
   Scenario: A slogan
     Given I'm at the home page
-    Then I shoud see "A Simple Clone of Twitter"
-
+    Then I should see "A Simple Clone of Twitter"
+  
+  Scenario: A Sign up Link
+    Given I'm at the home page
+    Then I should see a "Sign up" link
+  
