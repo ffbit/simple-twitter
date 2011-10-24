@@ -14,12 +14,25 @@ describe User do
     User.create!(@attr)
   end
   
-  describe "email attribute and it's validation" do
-    it "should have an email attribute" do
-      user = User.new(@attr)
-      user.should respond_to(:email)
+  describe "important attributes" do
+    before(:each) do
+      @user = User.create!(@attr)
     end
     
+    it "should have an email attribute" do
+      @user.should respond_to(:email)
+    end
+    
+    it "should have a password attribute" do
+      @user.should respond_to(:password)
+    end
+    
+    it "should have a password confirmation attribute" do
+      @user.should respond_to(:password_confirmation)
+    end
+  end
+  
+  describe "email attribute and it's validation" do
     it "should require an email address" do
       user = User.new(@attr.merge(:email => ""))
       user.should_not be_valid
@@ -49,16 +62,6 @@ describe User do
   end
   
   describe "passwords attributes and their validation" do
-    it "should have a password attribute" do
-      user = User.new(@arrt)
-      user.should respond_to(:password)
-    end
-    
-    it "should have a password confirmation attribute" do
-      user = User.new(@attr)
-      user.should respond_to(:password_confirmation)
-    end
-    
     it "should require a password" do
       user = User.new(@attr.merge(:password => ""))
       user.should_not be_valid
