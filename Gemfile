@@ -40,4 +40,5 @@ group :test, :development do
   gem "database_cleaner", "~> 0.6.7"
   
   gem "autotest-notification", "~> 2.3.3"
+  gem "spork", "0.9.0.rc8"
 end
