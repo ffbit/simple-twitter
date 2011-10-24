@@ -48,5 +48,38 @@ describe User do
     end
   end
   
+  describe "passwords attributes and their validation" do
+    it "should have a password attribute" do
+      user = User.new(@arrt)
+      user.should respond_to(:password)
+    end
+    
+    it "should have a password confirmation attribute" do
+      user = User.new(@attr)
+      user.should respond_to(:password_confirmation)
+    end
+    
+    it "should require a password" do
+      user = User.new(@attr.merge(:password => ""))
+      user.should_not be_valid
+    end
+    
+    it "should require a password confirmation" do
+      user = User.new(@attr.merge(:password_confirmation => ""))
+      user.should_not be_valid
+    end
+    
+    it "should require matching password confirmation" do
+      user = User.new(@attr.merge(:password_confirmation => "mismatch"))
+    end
+    
+    it "should reject a short password" do
+      short_password = "a" * 5
+      user = User.new(@attr.merge(:password => short_password, 
+                                  :password_confirmation => short_password))
+      user.should_not be_valid
+    end
+  end
+  
 end
 
