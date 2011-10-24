@@ -30,6 +30,9 @@ GEM
     activesupport (3.1.1)
       multi_json (~> 1.0)
     arel (2.2.1)
+    autotest-notification (2.3.3)
+      autotest-standalone (~> 4.5)
+    autotest-standalone (4.5.8)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capybara (1.1.1)
@@ -164,6 +167,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest-notification (~> 2.3.3)
   capybara (~> 1.1.1)
   coffee-rails (~> 3.1.1)
   cucumber-rails (~> 1.1.1)

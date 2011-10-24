@@ -38,4 +38,6 @@ group :test, :development do
   gem "capybara", "~> 1.1.1"
   gem "minitest", "~> 2.6.2"
   gem "database_cleaner", "~> 0.6.7"
+  
+  gem "autotest-notification", "~> 2.3.3"
 end
