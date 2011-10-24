@@ -1,4 +1,7 @@
 SimpleTwitter::Application.routes.draw do
+  
+  root :to => "pages#index"
+  
   get "pages/index"
 
   # The priority is based upon order of creation:
