@@ -14,7 +14,7 @@ describe User do
     User.create!(@attr)
   end
   
-  describe "important attributes" do
+  describe "important attributes and methods" do
     before(:each) do
       @user = User.create!(@attr)
     end
@@ -33,6 +33,34 @@ describe User do
     
     it "should have an encrypted password attribute" do
       @user.should respond_to(:encrypted_password)
+    end
+    
+    it "should set the encrypted password attribute" do
+      @user.encrypted_password.should_not be_blank
+    end
+    
+    it "should have a password salt attribute" do
+      @user.should respond_to(:password_salt)
+    end
+    
+    it "should set the password salt attribute" do
+      @user.password_salt.should_not be_blank
+    end
+    
+    it "should have a confirmation token attribute" do
+      @user.should respond_to(:confirmation_token)
+    end
+    
+    it "should set the confirmation token attribute" do
+      @user.confirmation_token.should_not be_blank
+    end
+    
+    it "should have a confirmed? method" do
+      @user.should respond_to(:confirmed?)
+    end
+    
+    it "should require confirmation" do
+      @user.should_not be_confirmed
     end
   end
   
@@ -85,11 +113,6 @@ describe User do
       user = User.new(@attr.merge(:password => short_password, 
                                   :password_confirmation => short_password))
       user.should_not be_valid
-    end
-    
-    it "should set the encrypted password attribute" do
-      user = User.create!(@attr)
-      user.encrypted_password.should_not be_blank
     end
   end
   
