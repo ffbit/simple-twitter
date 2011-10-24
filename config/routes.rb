@@ -1,11 +1,11 @@
 SimpleTwitter::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => :sessions }
 
-  root :to => "pages#index"
+  devise_scope :user do 
+    root :to => "sessions#new"
+  end
   
-  get "pages/index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
