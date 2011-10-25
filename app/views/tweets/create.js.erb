@@ -1,0 +1,6 @@
+<% if @tweet.errors.any? %>
+  alert("Error.")
+<% else %>
+  $('body').append("<%= escape_javascript @tweet.content %>");
+<% end %>
+

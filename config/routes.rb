@@ -1,6 +1,7 @@
 SimpleTwitter::Application.routes.draw do
   
   resources :users, :only => [:show, :home]
+  resources :tweets, :only => [:create]
   
   devise_for :users, :controllers => { :sessions => :sessions,
                                        :registrations => :registrations },

@@ -1,4 +1,4 @@
-<%= form_for(:tweet) do |f| %>
+<%= form_for(@tweet, :remote => true) do |f| %>
   <div class="field">
     <%= f.label :content, :class => "hack",
                           :style => "display:none; margin:0px; padding:0px;" %>

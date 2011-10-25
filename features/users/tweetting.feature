@@ -15,3 +15,9 @@ Feature: Tweeting
     Then I should see "content" field
     And I should see "Tweet" button
   
+  @make-tweet @javascript
+  Scenario: Make a Tweet
+    When I fill in a "content" field with "A good tweet."
+    And I click "Tweet" button
+    Then I should see "A good tweet."
+  

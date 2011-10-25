@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   
   def home
-    
+    @tweet = Tweet.new
   end
   
 end
