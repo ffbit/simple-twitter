@@ -3,6 +3,7 @@ Given /^I'm at the home page$/ do
 end
 
 Then /^I should see "([^"]*)"$/ do |text|
+  page.should have_content(text)
   element = find('body', :text => text)
   element.should be_visible
 end

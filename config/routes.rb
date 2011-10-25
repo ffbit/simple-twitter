@@ -1,9 +1,7 @@
 SimpleTwitter::Application.routes.draw do
   
-  get "registrations/create"
-
-  get "registrations/new"
-
+  resources :users, :only => [:show, :home]
+  
   devise_for :users, :controllers => { :sessions => :sessions,
                                        :registrations => :registrations },
                      :skip => [:sessions] do
@@ -16,6 +14,9 @@ SimpleTwitter::Application.routes.draw do
     get 'signup' => 'registrations#new', :as => :new_user_registration
     post 'signup' => 'registrations#create', :as => :user_registration
     # TODO: registrations edit get and edit post
+    
+    # redirection after successful sing in
+    get 'home' => 'users#home', :as => :user_root
   end
   
   devise_scope :user do 
