@@ -1,4 +1,4 @@
-def path_to(page_name)
+def path_to(page_name, hash = {:confirmation_token => ''})
   case page_name
   
   when /the home page/
@@ -9,6 +9,9 @@ def path_to(page_name)
   
   when /the sign up page/
     '/signup'
+  
+  when /the confirmation page/
+    "#{confirmation_path}?confirmation_token=#{hash[:confirmation_token]}"
   
   # Add more page name => path mappings here
   
