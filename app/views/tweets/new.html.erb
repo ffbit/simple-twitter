@@ -1,0 +1,11 @@
+<%= form_for(:tweet) do |f| %>
+  <div class="field">
+    <%= f.label :content, :class => "hack",
+                          :style => "display:none; margin:0px; padding:0px;" %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Tweet" %>
+  </div>
+<% end %>
+

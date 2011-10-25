@@ -17,6 +17,10 @@ Then /^I should see [ anthe]{,4}"([^"]*)" field$/ do |field|
   find_field(field.capitalize).should be_visible
 end
 
+Then /^I should see [ anthe]{,4}"([^"]*)" button$/ do |locator|
+  find_button(locator)
+end
+
 
 
 # Navigation
