@@ -7,8 +7,8 @@ Feature: Email Confirmation after Sign up
   Scenario: Confirmation of an existing signed up user
     Given I have a signed up unconfirmed user
     When I follow a confirmation link
-    Then I should have confirmed user
-    And I should see "Your account was successfully confirmed. You are now signed in."
+    Then I should see "Your account was successfully confirmed. You are now signed in."
+    And I should have confirmed user
   
   Scenario: Confirmation of an invalid confirmation token
     When I follow a confirmation link with an invalid confirmation token
