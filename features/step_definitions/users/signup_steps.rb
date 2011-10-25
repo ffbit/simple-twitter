@@ -16,7 +16,9 @@ end
 
 Then /^I should have (\d+) unconfirmed users?$/ do |quantity|
   count = quantity.to_i
-  count.should == User.all.count
+  count.should == User.count
+  User.all.each do |user|
+    user.should_not be_confirmed
+  end
 end
-
 
