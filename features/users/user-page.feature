@@ -13,4 +13,7 @@ Feature: User's page
   
   Scenario: Show user's email address after sing in
     Then I should see user's email
+    
+  Scenario: Show an invitation for twitting
+    Then I should see "What’s happening?"
 
