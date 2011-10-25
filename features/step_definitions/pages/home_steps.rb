@@ -16,3 +16,10 @@ Then /^I should see [ anthe]{,4}"([^"]*)" field$/ do |field|
   find_field(field.capitalize).should be_visible
 end
 
+
+
+# Navigation
+Given /^I'm at the sign in page$/ do
+  visit path_to('the sign in page')
+end
+
