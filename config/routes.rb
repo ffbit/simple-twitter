@@ -1,11 +1,27 @@
 SimpleTwitter::Application.routes.draw do
   
-  devise_for :users
+  get "registrations/create"
 
-  root :to => "pages#index"
+  get "registrations/new"
+
+  devise_for :users, :controllers => { :sessions => :sessions,
+                                       :registrations => :registrations },
+                     :skip => [:sessions] do
+    # sessions
+    get 'signin' => 'sessions#new', :as => :new_user_session
+    post 'signin' => 'sessions#create', :as => :user_session
+    get 'signout' => 'sessions#destroy', :as => :destroy_user_session
+    
+    # registrations
+    get 'signup' => 'registrations#new', :as => :new_user_registration
+    post 'signup' => 'registrations#create', :as => :user_registration
+    # TODO: registrations edit get and edit post
+  end
   
-  get "pages/index"
-
+  devise_scope :user do 
+    root :to => "sessions#new"
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
