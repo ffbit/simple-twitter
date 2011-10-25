@@ -3,7 +3,16 @@ Feature: Home page
   As a user
   I want to see home page's attributes
   
-  Scenario: A slogan
+  Background: Visit the Home Page
     Given I'm at the home page
-    Then I shoud see "A Simple Clone of Twitter"
+  
+  Scenario: A slogan
+    Then I should see "A Simple Clone of Twitter"
+  
+  Scenario: A Sign up Link
+    Then I should see a "Sign up" link
+  
+  Scenario: A Sing in Form
+    Then I should see a "email" field
+    And I should see a "password" field
 
