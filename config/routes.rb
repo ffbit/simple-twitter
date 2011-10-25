@@ -1,6 +1,6 @@
 SimpleTwitter::Application.routes.draw do
   
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :home]
   
   devise_for :users, :controllers => { :sessions => :sessions,
                                        :registrations => :registrations },
@@ -16,7 +16,7 @@ SimpleTwitter::Application.routes.draw do
     # TODO: registrations edit get and edit post
     
     # redirection after successful sing in
-    get 'users' => 'users#show', :as => :user_root
+    get 'home' => 'users#home', :as => :user_root
   end
   
   devise_scope :user do 
