@@ -15,7 +15,7 @@ SimpleTwitter::Application.routes.draw do
     post 'signup' => 'registrations#create', :as => :user_registration
     # TODO: registrations edit get and edit post
     
-    # redirection after successfull sing in
+    # redirection after successful sing in
     get 'users' => 'users#show', :as => :user_root
   end
   
