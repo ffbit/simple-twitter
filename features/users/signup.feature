@@ -11,6 +11,7 @@ Feature: Sign up
     And I fill in a "password confirmation" field with "secret"
     And I click a "Sign up" button
     Then I should see "You have signed up successfully. Please check your email and confirm your account."
+    # TODO: how to check an email?
     And I should have 1 unconfirmed user
     
   Scenario: Sign up with an invalid email address
