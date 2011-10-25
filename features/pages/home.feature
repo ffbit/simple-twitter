@@ -13,6 +13,6 @@ Feature: Home page
     Then I should see a "Sign up" link
   
   Scenario: A Sing in Form
-    Then I should see a "email" field
+    Then I should see an "email" field
     And I should see a "password" field
 

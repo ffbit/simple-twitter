@@ -7,8 +7,8 @@ Feature: Sign up
     Given I'm not signed in
     And I'm at the sign up page
     When I fill in an "email" field with "good@email.com"
-    And I fill in an "password" field with "secret"
-    And I fill in an "password confirmation" field with "secret"
+    And I fill in a "password" field with "secret"
+    And I fill in a "password confirmation" field with "secret"
     And I click a "Sign up" button
     Then I should see "You have signed up successfully. Please check your email and confirm your account."
 

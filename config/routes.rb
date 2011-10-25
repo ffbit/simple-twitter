@@ -1,10 +1,21 @@
 SimpleTwitter::Application.routes.draw do
   
-  devise_for :users, :controllers => { :sessions => :sessions },
+  get "registrations/create"
+
+  get "registrations/new"
+
+  devise_for :users, :controllers => { :sessions => :sessions,
+                                       :registrations => :registrations },
                      :skip => [:sessions] do
+    # sessions
     get 'signin' => 'sessions#new', :as => :new_user_session
     post 'signin' => 'sessions#create', :as => :user_session
     get 'signout' => 'sessions#destroy', :as => :destroy_user_session
+    
+    # registrations
+    get 'signup' => 'registrations#new', :as => :new_user_registration
+    post 'signup' => 'registrations#create', :as => :user_registration
+    # TODO: registrations edit get and edit post
   end
   
   devise_scope :user do 
