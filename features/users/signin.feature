@@ -8,11 +8,16 @@ Feature: Sing in
     Given I'm not signed in
   
   Scenario: Valid Sing in
-    And I have a confirmed user
+    Given I have a confirmed user
     When I sign in
     Then I should see "Signed in successfully."
   
   Scenario: Invalid Sing in with a wrong email/password combination
     When I sing in with a wrong email/password combination
     Then I should see "Invalid email or password."
+  
+  Scenario: Invalid Sing in for unconfirmed user
+    Given I have a signed up unconfirmed user
+    When I sign in
+    Then I should see "You have to confirm your account before continuing."
 
