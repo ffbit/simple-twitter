@@ -21,4 +21,13 @@ Feature: Sign up
     And I fill in a "password confirmation" field with "secret"
     And I click a "Sign up" button
     Then I should see "Email is invalid"
+  
+  Scenario: Sign up without a password
+    Given I'm not signed in
+    And I'm at the sign up page
+    When I fill in an "email" field with "good@email.com"
+    And I fill in a "password" field with ""
+    And I fill in a "password confirmation" field with "secret"
+    And I click a "Sign up" button
+    Then I should see "Password can't be blank"
 
