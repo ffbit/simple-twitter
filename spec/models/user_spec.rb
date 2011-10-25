@@ -62,6 +62,10 @@ describe User do
     it "should require confirmation" do
       @user.should_not be_confirmed
     end
+    
+    it "should have a tweets attribute" do
+      @user.should respond_to(:tweets)
+    end
   end
   
   describe "email attribute and it's validation" do
@@ -87,7 +91,7 @@ describe User do
     end
     
     it "should reject duplicated emails" do
-      User.create!(@attr)
+      Factory(:user, :email => @attr[:email])
       user_with_duplicated_email = User.new(@attr)
       user_with_duplicated_email.should_not be_valid
     end
