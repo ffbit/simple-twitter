@@ -1,6 +1,7 @@
 <% if @tweet.errors.any? %>
   alert("Error.")
 <% else %>
-  $('body').append("<%= escape_javascript @tweet.content %>");
+  $('#tweets').prepend("<%= escape_javascript(render :partial => 'layouts/tweet',
+                                          :locals => { :tweet => @tweet }) %>");
 <% end %>
 
