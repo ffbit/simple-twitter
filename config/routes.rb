@@ -20,6 +20,7 @@ SimpleTwitter::Application.routes.draw do
   
   devise_scope :user do 
     root :to => "sessions#new"
+    get 'confirmation' => 'devise/confirmations#show', 
   end
   
   # The priority is based upon order of creation:

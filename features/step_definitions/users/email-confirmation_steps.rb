@@ -1,12 +1,14 @@
-Given /^I have (\d+) signed up unconfirmed user$/ do |quantity|
-  pending # express the regexp above with the code you wish you had
+Given /^I have a signed up unconfirmed user$/ do
+  @user = Factory(:user)
 end
 
-When /^I confirm the user$/ do
-  pending # express the regexp above with the code you wish you had
+When /^I follow a confirmation link$/ do
+  # Is it good or bad?
+  visit "#{confirmation_path}?confirmation_token=#{@user.confirmation_token}"
 end
 
-Then /^I should have (\d+) confirmed user$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^I should have confirmed user$/ do
+  @user.reload
+  @user.should be_confirmed
 end
 
