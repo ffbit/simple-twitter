@@ -9,4 +9,8 @@ Feature: Email Confirmation after Sign up
     When I follow a confirmation link
     Then I should have confirmed user
     And I should see "Your account was successfully confirmed. You are now signed in."
+  
+  Scenario: Confirmation of an invalid confirmation token
+    When I follow a confirmation link with an invalid confirmation token
+    Then I should see "Confirmation token is invalid"
 

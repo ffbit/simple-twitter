@@ -12,3 +12,7 @@ Then /^I should have confirmed user$/ do
   @user.should be_confirmed
 end
 
+When /^I follow a confirmation link with an invalid confirmation token$/ do
+  visit "#{confirmation_path}?confirmation_token=a_bad_confirmation_token"
+end
+
