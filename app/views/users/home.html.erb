@@ -11,7 +11,7 @@
   <%= render 'layouts/tweets' %>
 </div>
 
-<% if not @next_page.nil? %>
+<% if @page > 1 %>
   <%= render 'layouts/more_tweets' %>
 <% end %>
 
