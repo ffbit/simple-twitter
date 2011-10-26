@@ -42,4 +42,5 @@ group :test, :development do
   gem "autotest-notification", "~> 2.3.3"
   gem "spork", "0.9.0.rc8"
   gem "factory_girl_rails", "~> 1.3.0"
+  gem "faker", "~> 1.0.1"
 end
