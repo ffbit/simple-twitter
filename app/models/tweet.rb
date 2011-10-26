@@ -6,4 +6,10 @@ class Tweet < ActiveRecord::Base
                       :length =>  {:maximum => 140}
   validates :user,    :presence => true
   
+  class << self
+    def per_page
+      10
+    end
+  end
+  
 end

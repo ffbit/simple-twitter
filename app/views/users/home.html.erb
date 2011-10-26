@@ -3,5 +3,15 @@
 
 <div><%= current_user.email %></div>
 
-<div>"What’s happening?</div>
+<div>What’s happening?</div>
+
+<%= render :template => 'tweets/new' %>
+
+<div id="tweets">
+  <%= render 'layouts/tweets' %>
+</div>
+
+<% if @page > 0 %>
+  <%= render 'layouts/more_tweets' %>
+<% end %>
 

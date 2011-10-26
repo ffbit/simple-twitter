@@ -7,3 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('body').delegate('.tweet a.delete', 'ajax:success', function() {
+    $(this).parents('.tweet').remove();
+  });
+});
+

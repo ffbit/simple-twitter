@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
   
   def home
-    
+    @tweet = Tweet.new
+    page_of_tweets(params)
   end
   
 end

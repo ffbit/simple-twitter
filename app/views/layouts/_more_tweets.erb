@@ -1,0 +1,9 @@
+<div id="tweets-more">
+  <%= form_for(:pagination, :remote => true, :url => more_tweets_path ) do |f| %>
+    <%= f.hidden_field :page, :name => :page, :value => @page %>
+    <div class="actions">
+      <%= f.submit "More" %>
+    </div>
+  <% end %>
+<div>
+
