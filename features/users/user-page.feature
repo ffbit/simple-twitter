@@ -16,4 +16,7 @@ Feature: User's page
   
   Scenario: Show user's avatar after sing in
     Then I should see user's avatar
+  
+  Scenario: Edit user's profile link
+    Then I should see "Edit profile" link
 

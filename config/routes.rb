@@ -17,6 +17,8 @@ SimpleTwitter::Application.routes.draw do
     get 'signup' => 'registrations#new', :as => :new_user_registration
     post 'signup' => 'registrations#create', :as => :user_registration
     # TODO: registrations edit get and edit post
+    get 'edit' => 'registrations#edit', :as => :edit_user_registration
+    put 'signup' => 'registrations#update'
     
     # redirection after successful sing in
     get 'home' => 'users#home', :as => :user_root
