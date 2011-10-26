@@ -13,4 +13,7 @@ Feature: User's page
   
   Scenario: Show user's email address after sing in
     Then I should see user's email
+  
+  Scenario: Show user's avatar after sing in
+    Then I should see user's avatar
 

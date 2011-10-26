@@ -10,3 +10,7 @@ Then /^I should see user's email$/ do
   Then %{I should see "#{@user.email}"}
 end
 
+Then /^I should see user's avatar$/ do
+  find('img#avatar').should be_visible
+end
+
