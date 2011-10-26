@@ -19,6 +19,9 @@ def path_to(page_name, hash = {:confirmation_token => ''})
   when /the user's page/
     '/home'
   
+  when /the who to follow page/
+    users_path
+  
   # Add more page name => path mappings here
   
   else
