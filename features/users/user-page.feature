@@ -20,6 +20,10 @@ Feature: User's page
   Scenario: Edit user's profile link
     Then I should see "Edit profile" link
   
-  Scenario: Who to follow
+  Scenario: Who to follow link
     Then I should see "Who to follow" link
+  
+  Scenario: Clicking Who to follow link
+    When I click "Who to follow" link
+    Then I should see "List of users"
 

@@ -8,5 +8,9 @@ class UsersController < ApplicationController
     page_of_tweets(params)
   end
   
+  def index
+    
+  end
+  
 end
 
