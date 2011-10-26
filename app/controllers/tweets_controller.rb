@@ -10,5 +10,9 @@ class TweetsController < ApplicationController
     page_of_tweets(params)
   end
   
+  def destroy
+  
+  end
+  
 end
 

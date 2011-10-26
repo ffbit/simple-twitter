@@ -1,2 +1,5 @@
-<div class="tweet"><%= tweet.content %></div>
+<div class="tweet">
+  <%= tweet.content %>
+  <%= render :partial => 'layouts/delete_tweet', :locals => { :tweet => tweet } %>
+</div>
 

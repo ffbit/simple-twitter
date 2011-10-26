@@ -1,4 +1,4 @@
-Given /^I've got (\d+) tweets$/ do |count_str|
+Given /^I've got (\d+) tweets?$/ do |count_str|
   count_str.to_i.times do
     Factory(:tweet, :user => @user)
   end
