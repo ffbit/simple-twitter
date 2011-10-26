@@ -18,4 +18,12 @@ Feature: Tweet Pagination
     And I'm on the user's page
     When I click "More" button
     Then I should see 20 tweets
+  
+  @javascript
+  Scenario: All pages of tweets
+    Given I'm signed in
+    And I've got 50 tweets
+    And I'm on the user's page
+    When I click "More" button 4 times
+    Then I should not see "More" button
 
