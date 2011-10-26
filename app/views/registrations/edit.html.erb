@@ -1,15 +1,12 @@
-<h2>Edit your details</h2>
+<h2>Edit your details <%= current_user.email %></div></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
   
   <div>
-    <%= link_to "Edit avatar", "http://gravatar.com/emails", :target => '_blank' %>
     <%= render 'layouts/gravatar' %>
+    <%= link_to "Edit avatar", "http://gravatar.com/emails", :target => '_blank' %>
   </div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
 
   <div>
     <%= f.label :password %>

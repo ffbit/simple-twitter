@@ -14,7 +14,6 @@ Feature: Edit user profile
     Then I should see "Edit your details"
     
   Scenario: Edit User's profile
-    When I fill in an "email" field with "new-good@email.com"
     And I fill in a "password" field with "new password"
     And I fill in a "password confirmation" field with "new password"
     And I fill in a "current password" field with "secret"
