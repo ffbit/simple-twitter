@@ -16,4 +16,10 @@ Feature: Following
     And I'm at the who to follow page
     Then I should see emails of other users as links
     And I should see avatars of other users
-    And I should see email of user as link
+    And I should not see email of user as link
+  
+  Scenario: Unconfirmed users
+    Given I have 10 unconfirmed users
+    And I'm at the who to follow page
+    Then I should not see emails of other users as links
+

@@ -9,6 +9,11 @@ Then /^I should see [ anthe]{,4}"([^"]*)" link$/ do |text|
   element.should be_visible
 end
 
+Then /^I should not see "([^"]*)" link$/ do |text|
+  has_no_link?(text, :class => 'email').should be_true
+end
+
+
 Then /^I should see [ anthe]{,4}"([^"]*)" field$/ do |field|
   find_field(field.capitalize).should be_visible
 end
