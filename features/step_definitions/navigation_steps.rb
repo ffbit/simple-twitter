@@ -10,3 +10,7 @@ Given /^I'm on the user's page$/ do
   visit path_to("the user's page")
 end
 
+Given /^I'm at the who to follow page$/ do
+  visit path_to('the who to follow page')
+end
+
