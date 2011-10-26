@@ -8,3 +8,7 @@ When /^I click [ anthe]{,4}"([^"]*)" button (\d+) times$/ do |locator, count|
   end
 end
 
+When /^I [ anthe]{,4}click "([^"]*)" link$/ do |locator|
+  click_link locator
+end
+

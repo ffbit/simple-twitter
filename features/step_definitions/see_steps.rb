@@ -17,7 +17,11 @@ Then /^I should see [ anthe]{,4}"([^"]*)" button$/ do |locator|
   find_button(locator)
 end
 
-Then /^I should not see "([^"]*)" button$/ do |locator|
+Then /^I should not see [ anthe]{,4}"([^"]*)" button$/ do |locator|
   has_no_button?(locator).should be_true
+end
+
+Then /^I should not see [ anthe]{,4}"([^"]*)"$/ do |text|
+  has_no_content?(text).should be_true
 end
 
