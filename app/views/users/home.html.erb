@@ -2,6 +2,9 @@
 <p>Find me in app/views/users/home.html.erb</p>
 
 <div><%= current_user.email %></div>
+<div>
+  <%= gravatar_image_tag current_user.email, :alt => current_user.email, :id => "avatar"%>
+</div>
 
 <div>What’s happening?</div>
 
