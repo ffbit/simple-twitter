@@ -19,4 +19,7 @@ Feature: User's page
   
   Scenario: Edit user's profile link
     Then I should see "Edit profile" link
+  
+  Scenario: Who to follow
+    Then I should see "Who to follow" link
 
