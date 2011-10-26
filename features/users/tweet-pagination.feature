@@ -9,4 +9,13 @@ Feature: Tweet Pagination
     And I've got 50 tweets
     And I'm on the user's page
     Then I should see 10 tweets
+    And I should see "More" button
+  
+  @javascript
+  Scenario: One more page of tweets
+    Given I'm signed in
+    And I've got 50 tweets
+    And I'm on the user's page
+    When I click "More" button
+    Then I should see 20 tweets
 

@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   
   def home
     @tweet = Tweet.new
-    @top_tweets = Tweet.find_all_by_user_id(current_user.id,
+    @tweets = Tweet.find_all_by_user_id(current_user.id,
                                             :limit => Tweet.per_page)
+    @next_page = 2 if Tweet.per_page < current_user.tweets.count
   end
   
 end

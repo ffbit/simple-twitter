@@ -1,0 +1,3 @@
+$('#tweets').append("<%= escape_javascript(render :partial => 'layouts/tweets',
+                                          :locals => { }) %>");
+$('#tweets-more').find('input[name="page"]').val("<%= @page %>");

@@ -1,6 +1,4 @@
-<div id="tweets">
-  <% @top_tweets.each do |tweet| %>
-  <%= render :partial => 'layouts/tweet', :locals => { :tweet => tweet } %>
-  <% end %>
-</div>
+<% @tweets.each do |tweet| %>
+<%= render :partial => 'layouts/tweet', :locals => { :tweet => tweet } %>
+<% end %>
 

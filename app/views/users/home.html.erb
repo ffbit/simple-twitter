@@ -7,5 +7,11 @@
 
 <%= render :template => 'tweets/new' %>
 
-<%= render 'layouts/tweets' %>
+<div id="tweets">
+  <%= render 'layouts/tweets' %>
+</div>
+
+<% if not @next_page.nil? %>
+  <%= render 'layouts/more_tweets' %>
+<% end %>
 
