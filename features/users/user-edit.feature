@@ -4,10 +4,20 @@ Feature: Edit user profile
   As a user
   I want to be able change them
   
-  Scenario: Clicking Edit profile link
+  Background: Visit Edit Profile Link
     Given I have a user
     And I sign in
     And I'm on the user's page
     When I click "Edit profile" link
+  
+  Scenario: Clicking Edit profile link
     Then I should see "Edit your details"
+    
+  Scenario: Edit User's profile
+    When I fill in an "email" field with "new-good@email.com"
+    And I fill in a "password" field with "new password"
+    And I fill in a "password confirmation" field with "new password"
+    And I fill in a "current password" field with "secret"
+    And I click a "Update" button
+    Then I should see "You updated your account successfully."
 
