@@ -3,7 +3,7 @@
 
 <div><%= current_user.email %></div>
 
-<%= render 'layouts/gravatar' %>
+<%= render :partial => 'layouts/gravatar', :locals => { :user => current_user } %>
 
 <div>What’s happening?</div>
 

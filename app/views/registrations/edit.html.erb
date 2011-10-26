@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
   
   <div>
-    <%= render 'layouts/gravatar' %>
+    <%= render :partial => 'layouts/gravatar', :locals => { :user => current_user } %>
     <%= link_to "Edit avatar", "http://gravatar.com/emails", :target => '_blank' %>
   </div>
 
