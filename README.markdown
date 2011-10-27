@@ -17,5 +17,5 @@
   - которые читают Вас
 
 ## TODO
-Написать RSpec-тесты для контроллеров.
+Pagination doesn't work. I'm so sad.
 
