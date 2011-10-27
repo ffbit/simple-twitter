@@ -29,4 +29,16 @@ describe Relationship do
     end
   end
   
+  describe "validation" do
+    it "should require the followed_id attribute" do
+      @relationship.followed = nil
+      @relationship.should_not be_valid
+    end
+      
+    it "should require the follower_id attribute" do
+      @relationship.follower = nil
+      @relationship.should_not be_valid
+    end
+  end
+  
 end
