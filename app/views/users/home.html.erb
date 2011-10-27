@@ -9,25 +9,20 @@
   <div class="span-12">
     <%= render :template => 'tweets/new' %>
   </div>
+  <div class="span-12">
+    <div id="tweets">
+      <%= render 'layouts/tweets' %>
+    </div>
+    <% if @page > 0 %>
+      <%= render 'layouts/more_tweets' %>
+    <% end %>
+  </div>
 </div>
 <div class="span-12 last">
   <div class="span-8 big">
     <%= link_to "Who to follow", users_path %>
   </div>
 </div>
-
-
-
-
-
-
-<div id="tweets">
-  <%= render 'layouts/tweets' %>
-</div>
-
-<% if @page > 0 %>
-  <%= render 'layouts/more_tweets' %>
-<% end %>
 
 
 <div id="followers">
