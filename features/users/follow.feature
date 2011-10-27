@@ -22,4 +22,12 @@ Feature: Following
     Given I have 10 unconfirmed users
     And I'm at the who to follow page
     Then I should not see emails of other users as links
+    
+  Scenario: Visit another user's page
+    Given I have 1 user
+    And I'm at the who to follow page
+    When I click on the user email link
+    Then I should see another user's avatar
+    Then I should see another user's email
+    And I should see "Follow" link
 
