@@ -1,0 +1,17 @@
+<% if current_user.followers.any? %>
+  <div id="followers" class="span-12 last">
+    <div class="middle">
+      <%= pluralize(current_user.followers.count, 'follower') %>
+    </div>
+    <% current_user.followers.each do |follower| %>
+      <div class="section">
+        <div class="span-1">
+          <%= gravatar_for follower, :size => 32 %>
+        </div>
+        <div class="span-11 last middle">
+          <%= link_to follower.email, follower %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

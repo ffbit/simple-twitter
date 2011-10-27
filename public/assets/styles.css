@@ -56,8 +56,12 @@ form.user_new {
   font-size: 300%;
 }
 
+.middle {
+  font-size: 200%;
+}
+
 textarea {
-  width: 400px;
+  width: 450px;
   height: 120px;
 }
 
@@ -66,6 +70,7 @@ textarea {
   margin: .5em auto;
   padding: .5em;
 }
+
 
 
 
