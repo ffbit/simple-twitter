@@ -10,6 +10,9 @@
   <div class="content">
     <%= tweet.content %>
   </div>
+  <div class="time">
+    <%= tweet.created_at %>
+  </div>
   <% if tweet.user == current_user %>
   <div>
     <%= render :partial => 'layouts/delete_tweet', :locals => { :tweet => tweet } %>

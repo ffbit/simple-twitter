@@ -12,4 +12,6 @@ class Tweet < ActiveRecord::Base
     end
   end
   
+  default_scope :order => 'tweets.created_at DESC'
+  
 end
