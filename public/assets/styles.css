@@ -24,6 +24,11 @@ h1, h2 {
   overflow: auto;
 }
 
+.flash {
+  margin: 0px auto 1em;
+  width: 700px;
+}
+
 .sign, .sign:hover {
   margin: 20px auto;
   margin-right: auto;
