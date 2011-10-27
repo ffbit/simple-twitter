@@ -3,7 +3,7 @@ Given /^I have a user$/ do
 end
 
 Then /^I should be at the user's page$/ do
-  page.current_url.should =~ /home$/
+  page.current_url.should =~ /users\/show/
 end
 
 Then /^I should see user's email$/ do

@@ -17,7 +17,7 @@ def path_to(page_name, hash = {:confirmation_token => ''})
     '/signin'
   
   when /the user's page/
-    '/home'
+    '/users/show'
   
   when /the who to follow page/
     users_path

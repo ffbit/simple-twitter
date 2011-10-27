@@ -47,7 +47,7 @@ end
 
 Then /^I should see another user's email$/ do
   @users.each do |user|
-    Then %{I should not see "#{user.email}"}
+    Then %{I should see "#{user.email}"}
   end
 end
 

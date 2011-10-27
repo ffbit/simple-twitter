@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id]) || current_user
+    @tweet = Tweet.new
+    page_of_tweets(params)
   end
   
   def home

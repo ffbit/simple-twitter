@@ -1,11 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="span-12 border">
+  <div class="span-2">
+    <%= gravatar_for @user %>
+  </div>
+  <div class="span-10 last">
+    <div class="big email"><%= @user.email %></div>
+    <% if @user == current_user %>
+      <%= link_to "Edit profile", edit_user_registration_path %>
+    <% else %>
+      <% if current_user.following?(@user) %>
+        <%= link_to "Unfollow", "#{relationship_path}?id=#{@user.id}", :method => :delete %>
+      <% else %>
+        <%= link_to "Follow", "#{relationships_path}?id=#{@user.id}", :method => :post %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="span-12">
+    <%= render :template => 'tweets/new' %>
+  </div>
+  <div class="span-12">
+    <div id="tweets">
+      <%= render 'layouts/tweets' %>
+    </div>
+    <% if @page > 0 %>
+      <%= render 'layouts/more_tweets' %>
+    <% end %>
+  </div>
+</div>
+<div class="span-12 last">
+  <div class="span-12 big">
+    <%= link_to "Who to follow", users_path %>
+  </div>
+  
+  <%= render 'users/followers' %>
+  <%= render 'users/followeds' %>
+</div>
 
-<% if current_user.following?(@user) %>
-  <%= link_to "Unfollow", "#{relationship_path}?id=#{@user.id}", :method => :delete %>
-<% else %>
-  <%= link_to "Follow", "#{relationships_path}?id=#{@user.id}", :method => :post %>
-<% end %>
-
-<%= render :partial => 'layouts/gravatar', :locals => { :user => @user } %>
 

@@ -23,7 +23,7 @@ SimpleTwitter::Application.routes.draw do
     put 'signup' => 'registrations#update'
     
     # redirection after successful sing in
-    get 'home' => 'users#home', :as => :user_root
+    get 'users/show' => 'users#show', :as => :user_root
   end
   
   devise_scope :user do 
