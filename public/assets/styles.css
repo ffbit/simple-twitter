@@ -52,3 +52,12 @@ form.user_new {
   width: 310px;
 }
 
+.big {
+  font-size: 300%;
+}
+
+textarea {
+  width: 400px;
+  height: 120px;
+}
+

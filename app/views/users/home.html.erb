@@ -1,15 +1,25 @@
-<h1>Users#home</h1>
-<p>Find me in app/views/users/home.html.erb</p>
+<div class="span-12 border">
+  <div class="span-2">
+    <%= render :partial => 'layouts/gravatar', :locals => { :user => current_user } %>
+  </div>
+  <div class="span-10 last">
+    <div class="big"><%= current_user.email %></div>
+    <%= link_to "Edit profile", edit_user_registration_path %>
+  </div>
+  <div class="span-12">
+    <%= render :template => 'tweets/new' %>
+  </div>
+</div>
+<div class="span-12 last">
+  <div class="span-8 big">
+    <%= link_to "Who to follow", users_path %>
+  </div>
+</div>
 
-<div><%= current_user.email %></div>
 
-<%= render :partial => 'layouts/gravatar', :locals => { :user => current_user } %>
 
-<div>What’s happening?</div>
 
-<%= link_to "Edit profile", edit_user_registration_path %>
 
-<%= render :template => 'tweets/new' %>
 
 <div id="tweets">
   <%= render 'layouts/tweets' %>
@@ -19,7 +29,6 @@
   <%= render 'layouts/more_tweets' %>
 <% end %>
 
-<%= link_to "Who to follow", users_path %>
 
 <div id="followers">
   <div class="count">
