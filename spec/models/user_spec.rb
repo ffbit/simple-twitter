@@ -66,6 +66,10 @@ describe User do
     it "should have a tweets attribute" do
       @user.should respond_to(:tweets)
     end
+    
+    it "should have a relationships attribute" do
+      @user.should respond_to(:relationships)
+    end
   end
   
   describe "email attribute and it's validation" do
