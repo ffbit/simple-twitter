@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
   
   def home
+    @user = current_user
     @tweet = Tweet.new
     page_of_tweets(params)
   end

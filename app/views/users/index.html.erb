@@ -1,10 +1,10 @@
 <h1>List of users</h1>
 
 <% @users.each do |user| %>
-  <% if user.id != current_user.id and user.confirmed? %>
-  <div class="user">
-    <%= render :partial => 'layouts/gravatar', :locals => { :user => user } %>
-    <%= link_to user.email, user, :class => "email" %>
+  <% if user.id != current_user.id and user.confirmed? and not current_user.following?(user) %>
+  <div class="section">
+    <div class="span-2 prepend-8"><%= gravatar_for user %></div>
+    <div class="span-8 big"><%= link_to user.email, user, :class => "email" %></div>
   </div>
   <% end %>
 <% end %>

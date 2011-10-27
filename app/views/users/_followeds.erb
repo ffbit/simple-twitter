@@ -1,9 +1,9 @@
-<% if current_user.following.any? %>
+<% if @user.following.any? %>
   <div id="followeds" class="span-12 last">
     <div class="middle">
-      <%= pluralize(current_user.following.count, 'followed') %>
+      <%= pluralize(@user.following.count, 'followed') %>
     </div>
-    <% current_user.following.each do |followed| %>
+    <% @user.following.each do |followed| %>
       <div class="section">
         <div class="span-1">
           <%= gravatar_for followed, :size => 32 %>
