@@ -51,3 +51,32 @@ Then /^I should see another user's email$/ do
   end
 end
 
+Given /^I'm on another user's page$/ do
+  Given %{I have 1 user}
+  And %{I'm at the who to follow page}
+  When %{I click on the user email link}
+end
+
+Then /^I should have (\d+) followed$/ do |count_str|
+  @user.following.count.should == count_str.to_i
+end
+
+Given /^I'm on followed user's page$/ do
+  followed = Factory(:user)
+  @user.follow!(followed)
+  visit user_path followed
+end
+
+Given /^I have (\d+) followers$/ do |count_str|
+  count_str.to_i.times do
+    Factory.next(:confirmed_user).follow!(@user)
+  end
+end
+
+Given /^I have (\d+) followeds$/ do |count_str|
+  count_str.to_i.times do
+    @user.follow! Factory.next(:confirmed_user)
+  end
+end
+
+

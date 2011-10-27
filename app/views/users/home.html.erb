@@ -21,3 +21,15 @@
 
 <%= link_to "Who to follow", users_path %>
 
+<div id="followers">
+  <div class="count">
+    <%= pluralize(current_user.followers.count, 'followers') %>
+  </div>
+</div>
+
+<div id="followeds">
+  <div class="count">
+    <%= pluralize(current_user.following.count, 'followeds') %>
+  </div>
+</div>
+
