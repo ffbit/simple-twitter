@@ -70,6 +70,10 @@ describe User do
     it "should have a relationships attribute" do
       @user.should respond_to(:relationships)
     end
+    
+    it "should have a following attribute" do
+      @user.should respond_to(:following)
+    end
   end
   
   describe "email attribute and it's validation" do
@@ -121,6 +125,45 @@ describe User do
       user = User.new(@attr.merge(:password => short_password, 
                                   :password_confirmation => short_password))
       user.should_not be_valid
+    end
+  end
+  
+  describe "follow" do
+    before(:each) do
+      @follower = Factory(:user)
+      @followed = Factory(:user)
+    end
+    
+    it "should have follow! method" do
+      @follower.should respond_to(:follow!)
+    end
+    
+    it "should have following method" do
+      @follower.should respond_to(:following)
+    end
+    
+    it "should have the right followed" do
+      @follower.follow!(@followed)
+      @follower.following.should include(@followed)
+    end
+    
+    it "should have unfollow! method" do
+      @follower.should respond_to(:unfollow!)
+    end
+    
+    it "should not have the right followed" do
+      @follower.follow!(@followed)
+      @follower.unfollow!(@followed)
+      @follower.following.should_not include(@followed)
+    end
+    
+    it "should have a followers method" do
+      @follower.should respond_to(:followers)
+    end
+    
+    it "should have the right follower" do
+      @follower.follow!(@followed)
+      @followed.followers.should include(@follower)
     end
   end
   
