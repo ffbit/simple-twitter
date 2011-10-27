@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SimpleTwitter</title>
-  <%= stylesheet_link_tag    "blueprint/screen", "application", 'styles' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container">
-    <%= render 'layouts/flash_messages' %>
-    <%= yield %>
-  </div>
-</body>
+  <head>
+    <title>SimpleTwitter</title>
+    <%= stylesheet_link_tag    "blueprint/screen", "application", 'styles' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>A Simple Clone of Twitter</h1>
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+    </div>
+  </body>
 </html>
+
