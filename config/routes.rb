@@ -1,6 +1,6 @@
 SimpleTwitter::Application.routes.draw do
   
-  resources :users, :only => [:show, :home, :index]
+  resources :users, :only => [:show, :index]
   
   resources :tweets, :only => [:create, :destroy]
   post 'more' => 'tweets#more', :as => :more_tweets

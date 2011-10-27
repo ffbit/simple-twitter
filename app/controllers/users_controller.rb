@@ -6,12 +6,6 @@ class UsersController < ApplicationController
     page_of_tweets(params)
   end
   
-  def home
-    @user = current_user
-    @tweet = Tweet.new
-    page_of_tweets(params)
-  end
-  
   def index
     @users = User.all
   end
