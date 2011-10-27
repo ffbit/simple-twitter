@@ -30,4 +30,15 @@ SimpleTwitter::Application.configure do
   
   # Devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,  
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :tls                => true,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => 'some.example1@gmail.com',
+    :password           => '1qaz12345'
+  }
+  
 end
