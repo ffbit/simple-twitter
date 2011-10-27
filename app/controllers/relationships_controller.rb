@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_filter :authenticate_user!
   
   def create
     user = User.find_by_id params[:id]

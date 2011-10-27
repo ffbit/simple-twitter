@@ -13,7 +13,11 @@ class RegistrationsController  < Devise::RegistrationsController
   end
 
   def new
-    super
+    if user_signed_in?
+      redirect_to current_user
+    else
+      super
+    end
   end
   
 end
