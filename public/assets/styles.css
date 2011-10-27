@@ -1,0 +1,91 @@
+.container {
+  margin: 1em auto;
+}
+
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.section {
+  overflow: auto;
+}
+
+.flash {
+  margin: 0px auto 1em;
+  width: 700px;
+}
+
+.sign, .sign:hover {
+  margin: 20px auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+form.user_new {
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+}
+
+.field input {
+  width: 310px;
+}
+
+.big {
+  font-size: 300%;
+}
+
+.middle {
+  font-size: 200%;
+}
+
+textarea {
+  width: 450px;
+  height: 120px;
+}
+
+.tweet {
+  background: #E5ECF9;
+  margin: .5em auto;
+  padding: .5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

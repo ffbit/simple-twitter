@@ -1,5 +1,19 @@
-<div class="tweet">
-  <%= tweet.content %>
-  <%= render :partial => 'layouts/delete_tweet', :locals => { :tweet => tweet } %>
+<div class="tweet round">
+  <div class="section">
+    <div class="span-1">
+      <%= gravatar_for tweet.user, :size => 32 %>
+    </div>
+    <div class="span-10 last middle">
+      <%= link_to tweet.user.email, tweet.user %>
+    </div>
+  </div>
+  <div class="content">
+    <%= tweet.content %>
+  </div>
+  <% if tweet.user == current_user %>
+  <div>
+    <%= render :partial => 'layouts/delete_tweet', :locals => { :tweet => tweet } %>
+  </div>
+  <% end %>
 </div>
 

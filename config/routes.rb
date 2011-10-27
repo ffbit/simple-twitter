@@ -1,6 +1,6 @@
 SimpleTwitter::Application.routes.draw do
   
-  resources :users, :only => [:show, :home, :index]
+  resources :users, :only => [:show, :index]
   
   resources :tweets, :only => [:create, :destroy]
   post 'more' => 'tweets#more', :as => :more_tweets
@@ -23,7 +23,7 @@ SimpleTwitter::Application.routes.draw do
     put 'signup' => 'registrations#update'
     
     # redirection after successful sing in
-    get 'home' => 'users#home', :as => :user_root
+    get 'users/show' => 'users#show', :as => :user_root
   end
   
   devise_scope :user do 
