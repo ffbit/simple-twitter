@@ -12,6 +12,11 @@ Factory.define :tweet do |tweet|
   tweet.association          :user
 end
 
+Factory.define :relationship do |relationship|
+  relationship.follower_id          { :user.id }
+  relationship.follwing_id          { :user.id }
+end
+
 Factory.sequence :email do |n|
   "user-#{n}@example.com"
 end
