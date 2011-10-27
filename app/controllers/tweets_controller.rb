@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_filter :authenticate_user!
   
   def create
     @tweet = Tweet.new(params[:tweet])
