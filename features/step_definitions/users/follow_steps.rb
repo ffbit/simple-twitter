@@ -79,4 +79,19 @@ Given /^I have (\d+) followeds$/ do |count_str|
   end
 end
 
+Then /^I should see (\d+) avatars of followers$/ do |count_str|
+  all('#followers img.avatar').count.should == count_str.to_i
+end
+
+Then /^I should see (\d+) avatars of followeds$/ do |count_str|
+  all('#followeds img.avatar').count.should == count_str.to_i
+end
+
+Then /^I should see (\d+) links of followers$/ do |count_str|
+  all('#followers a').count.should == count_str.to_i
+end
+
+Then /^I should see (\d+) links of followeds$/ do |count_str|
+  all('#followeds a').count.should == count_str.to_i
+end
 

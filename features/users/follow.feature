@@ -46,9 +46,13 @@ Feature: Following
     Given I have 5 followers
     And I'm on the user's page
     Then I should see "5 followers"
+    And I should see 5 avatars of followers
+    And I should see 5 links of followers
     
   Scenario: Followeds
     Given I have 3 followeds
     And I'm on the user's page
     Then I should see "3 followeds"
+    And I should see 3 avatars of followeds
+    And I should see 3 links of followeds
 

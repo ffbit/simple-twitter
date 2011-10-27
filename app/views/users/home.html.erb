@@ -25,11 +25,19 @@
   <div class="count">
     <%= pluralize(current_user.followers.count, 'followers') %>
   </div>
+  <% current_user.followers.each do |follower| %>
+    <%= render :partial => 'layouts/gravatar', :locals => { :user => follower } %>
+    <%= link_to follower.email, follower %>
+  <% end %>
 </div>
 
 <div id="followeds">
   <div class="count">
     <%= pluralize(current_user.following.count, 'followeds') %>
   </div>
+  <% current_user.following.each do |followed| %>
+    <%= render :partial => 'layouts/gravatar', :locals => { :user => followed } %>
+    <%= link_to followed.email, followed %>
+  <% end %>
 </div>
 
