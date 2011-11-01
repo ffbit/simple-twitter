@@ -6,9 +6,6 @@ Feature: Home page
   Background: Visit the Home Page
     Given I'm at the home page
   
-  Scenario: A slogan
-    Then I should see "A Simple Clone of Twitter"
-  
   Scenario: A Sign up Link
     Then I should see a "Sign up" link
   

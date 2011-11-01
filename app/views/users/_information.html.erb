@@ -1,0 +1,11 @@
+<div class="span-2">
+  <%= gravatar_for @user %>
+</div>
+<div class="span-10 last">
+  <div class="big email"><%= @user.email %></div>
+  <% if @user == current_user %>
+    <%= link_to "Edit profile", edit_user_registration_path %>
+  <% else %>
+    <%= render 'users/follow-unfollow' %>
+  <% end %>
+</div>

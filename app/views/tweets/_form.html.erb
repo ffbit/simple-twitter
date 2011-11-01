@@ -1,0 +1,15 @@
+<% if @user == current_user %>
+  <div class="span-12">
+    <div class="big">What’s happening?</div>
+    <%= form_for(@tweet, :remote => true) do |f| %>
+      <div class="field">
+        <%= f.label :content, :class => "hack",
+                              :style => "display:none; margin:0px; padding:0px;" %>
+        <%= f.text_area :content, :rows => 8 %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Tweet" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

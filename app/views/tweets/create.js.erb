@@ -1,7 +1,7 @@
 <% if @tweet.errors.any? %>
   alert("Error : content " + "<%= escape_javascript(@tweet.errors[:content].first) %>");
 <% else %>
-  $('#tweets').prepend("<%= escape_javascript(render :partial => 'layouts/tweet',
+  $('#tweets').prepend("<%= escape_javascript(render :partial => 'tweets/tweet',
                                           :locals => { :tweet => @tweet }) %>");
   $('textarea').val('');
 <% end %>
