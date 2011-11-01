@@ -2,13 +2,13 @@
 <html>
   <head>
     <title>SimpleTwitter</title>
-    <%= stylesheet_link_tag    "blueprint/screen", "application", 'styles' %>
+    <%= stylesheet_link_tag    'blueprint/screen', 'application', 'styles' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <div class="container">
-      <h1><%= link_to "A Simple Clone of Twitter" %></h1>
+      <%= render 'layouts/head' %>
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
     </div>
