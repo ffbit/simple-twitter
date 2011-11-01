@@ -20,8 +20,8 @@ Factory.define :tweet do |tweet|
 end
 
 Factory.define :relationship do |relationship|
-  relationship.follower_id          { :user.id }
-  relationship.follwing_id          { :user.id }
+  relationship.follower_id          { Factory(:user).id }
+  relationship.followed_id          { Factory(:user).id }
 end
 
 Factory.sequence :email do |n|

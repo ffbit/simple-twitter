@@ -5,7 +5,7 @@ SimpleTwitter::Application.routes.draw do
   resources :tweets, :only => [:create, :destroy]
   post 'more' => 'tweets#more', :as => :more_tweets
   
-  resources :relationships, :only => [:create, :destroy]
+  resources :relationships, :only => [:destroy, :update]
   
   devise_for :users, :controllers => { :sessions => :sessions,
                                        :registrations => :registrations },
