@@ -10,6 +10,8 @@ gem "devise", "~> 1.4.9"
 gem "gravatar_image_tag", "~> 1.0.0"
 gem 'recaptcha', :require => 'recaptcha/rails'
 
+gem 'therubyracer'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
