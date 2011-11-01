@@ -23,6 +23,12 @@ Feature: User's page
   Scenario: Who to follow link
     Then I should see "Who to follow" link
   
+  Scenario: Sign out link
+    Then I should see "Sign out" link
+  
+  Scenario: Home link
+    Then I should see "Home" link
+  
   Scenario: Clicking Who to follow link
     When I click "Who to follow" link
     Then I should see "List of users"
