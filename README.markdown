@@ -16,6 +16,3 @@
   - которых читаете Вы
   - которые читают Вас
 
-## TODO
-Pagination doesn't work. I'm so sad.
-
