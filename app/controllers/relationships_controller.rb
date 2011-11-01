@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
   before_filter :authenticate_user!
   
-  def create
+  def update
     user = User.find_by_id params[:id]
     current_user.follow!(user)
     redirect_to user_path(user),
